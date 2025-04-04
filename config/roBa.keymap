@@ -49,6 +49,14 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        emoji: emoji {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_WIN &kp PERIOD>, <&macro_tap>;
+
+            label = "EMOJI";
+        };
     };
 
     behaviors {
@@ -67,21 +75,21 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp L         &kp U         &kp COMMA                    &kp PERIOD                                                       &kp F        &kp W  &kp R  &kp Y  &kp P
-&kp E      &kp I         &kp A         &kp O                        &kp MINUS      &kp LS(LG(S))                      &kp MINUS      &kp K        &kp T  &kp N  &kp S  &kp H
-&kp Z      &kp X         &kp C         &kp V                        &kp SEMICOLON  &kp COLON                          &kp SEMICOLON  &kp G        &kp D  &kp M  &kp J  &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE    &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                       &kp DEL
+&kp Q               &kp L         &kp U         &kp COMMA                    &kp PERIOD                                                     &kp F        &kp W  &lt 5 R  &kp Y  &lt 5 P
+&mt LEFT_CONTROL E  &kp I         &kp A         &kp O                        &kp MINUS      &kp ESC                          &kp SQT        &kp K        &kp T  &kp N    &kp S  &mt LEFT_CONTROL H
+&mt LEFT_SHIFT Z    &kp X         &kp C         &kp V                        &kp SEMICOLON  &kp TAB                          &kp COLON      &kp G        &kp D  &kp M    &kp J  &mt RIGHT_SHIFT B
+&kp LCTRL           &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 LANGUAGE_2  &lt 2 SPACE    &lt_to_layer_0 3 LANGUAGE_1      &kp BACKSPACE  &lt 1 ENTER                         &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
         FUNCTION {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+&trans  &trans           &trans        &kp LESS_THAN  &kp GREATER_THAN                      &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH  &trans
+&trans  &kp EXCLAMATION  &kp QUESTION  &trans         &kp UNDERSCORE    &trans      &trans  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SLASH      &kp SQT
+&trans  &trans           &trans        &trans         &kp COLON         &trans      &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &kp DOUBLE_QUOTES
+&trans  &trans           &trans        &trans         &trans            &trans      &trans  &trans                                                              &trans
             >;
         };
 

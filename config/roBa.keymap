@@ -63,6 +63,7 @@
 
             label = "MKP_EXIT_AML";
         };
+};  //
 
         parenthesis: parenthesis {
             compatible = "zmk,behavior-macro";
